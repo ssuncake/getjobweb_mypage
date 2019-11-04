@@ -1,0 +1,35 @@
+.form-group {
+  width: auto;
+  position: relative;
+  left: 45%;
+  transform: translateX(-50%);
+  /* 	margin: 0 auto; */
+}
+.div {
+  top: 10%;
+  width: 300px;
+  height: 600px;
+  background: #aaff;
+  margin: 50px auto 0;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+.table {
+  height: auto;
+  width: 300px;
+  left: 45%;
+  padding: 10%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10%;
+}
+.table-member {
+  height: auto;
+  width: 300px;
+  left: 45%;
+  padding: 5%;
+  margin: 0 auto;
+  text-align: center;
+}
