@@ -10,10 +10,16 @@
 <title>mypage</title>
 <script type="text/javascript" >
 $().ready(function(){
-	$('#getSkills').click(function(){
-		$.get("insertMemberSkill.jsp", function(data){
-				$("#message").html(decodeURIComponent(data));
-			});
+	$('#getjoblist').click(function(){
+		alert("getjoblist");
+/* 		$.get("insertMemberSkill.job", function(data){
+			alert("data : "+data);
+				$("#job-list").html(decodeURIComponent(data));
+			}); */
+		$.get("../getjoblist.job", function(data){
+			alert(data);
+			document.write(data);
+		});
 	});
   $('#test').click(function(){
     alert("test");
@@ -53,8 +59,8 @@ $().ready(function(){
 			</table>
 		</div>
 		<br>
-		<button id = "getSkills">기술 가져오기</button>
-		<div id="skill-list"></div>
+		<button id="getjoblist">직업 가져오기</button>
+		<div id="job-list"></div>
 		<br />
 		<div id="skill-table">
 			<!-- skills -->

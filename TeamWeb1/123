@@ -1,0 +1,9 @@
+db.my.insert([
+{user_id:"aaa", age:"23", status:"A"},
+{user_id:"baa", age:32, status:"A"},
+{user_id:"caa", age:13, status:"F"},
+{user_id:"daa", age:5, status:"f"},
+{user_id:"eaa", age:19, status:"a"},
+{user_id:"afaa", age:30, status:"e"},
+{user_id:"afeaa", age:"23", status:"G"}
+]);

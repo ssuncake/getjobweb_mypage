@@ -27,7 +27,7 @@
 											} else {
 												$('#confirm').html("").css(
 														"color", "red");
-												userIdCheck=true;
+												userIdCheck = true;
 											}
 										});
 
@@ -57,37 +57,58 @@
 									} else if (pw1 == pw2) {
 										$('#pwcheck-confirm').html("OK<br>")
 												.css("color", "green");
-										pwCheck=true;
+										pwCheck = true;
 									} else {
 										$('#pwcheck-confirm').html(
 												"비밀번호가 다릅니다.<br>").css("color",
 												"red");
 									}
 								});
-						$('#submit-join').click(function(){
-							if(userIdCheck && pwCheck ){
-								alert("validation OK : "+userIdCheck);
-								$.ajax({
-									url:"/memberjoin.job",
-									method: "POST",
-									data: { 
-											id : $('#user-id').val(),
-											pw : $('#pw1').val(),
-											name : $('#user-name').val()
-										},
-									success : function (data){
-										alert("성공");
-									},
-									error: function (request, status, error){
-										 alert("code:  "+request.status+"\n"+"message:  "+request.responseText+"\n"+"error:  "+error);
-									}
-									
-								});
-							}else{
-								alert("validation OK : "+userIdCheck);
-							}
-							
-						});
+						$('#submit-join')
+								.click(
+										function() {
+											if (userIdCheck && pwCheck) {
+												alert("validation OK : "
+														+ userIdCheck);
+												$
+														.ajax({
+															url : "/memberjoin.job",
+															method : "POST",
+															data : {
+																id : $(
+																		'#user-id')
+																		.val(),
+																pw : $('#pw1')
+																		.val(),
+																name : $(
+																		'#user-name')
+																		.val()
+															},
+															success : function(
+																	data) {
+																alert("성공");
+															},
+															error : function(
+																	request,
+																	status,
+																	error) {
+																alert("code:  "
+																		+ request.status
+																		+ "\n"
+																		+ "message:  "
+																		+ request.responseText
+																		+ "\n"
+																		+ "error:  "
+																		+ error);
+															}
+
+														});
+											} else {
+												alert("validation OK : "
+														+ userIdCheck);
+											}
+
+										});
 
 					});
 </script>
@@ -104,12 +125,9 @@
 	top: 10%;
 	width: 300px;
 	height: 400px;
-	
 	background: #eeffee;
-	
 	margin: 0 auto;
 	margin-top: 100px;
-	
 	padding-top: 100px;
 	padding-left: 50px;
 	padding-right: 50px;
@@ -119,39 +137,39 @@
 .form-confirm1 {
 	height: auto;
 	width: 300px;
-	left: 45%; padding : 10%;
+	left: 45%;
+	padding: 10%;
 	text-align: center;
 	padding: 10%;
 }
-
 </style>
 </head>
 <body>
 	<div>
 		<div class="div-join">
-				<div class="form-group has-feddback">
-					<input id="user-id" type="text" name="id" class="form-control"
-						placeholder="아이디">
-				</div>
-				<span class="form-confirm" id="confirm"></span>
+			<div class="form-group has-feddback">
+				<input id="user-id" type="text" name="id" class="form-control"
+					placeholder="아이디">
+			</div>
+			<span class="form-confirm" id="confirm"></span>
 
-				<div class="form-group has-feddback">
-					<input id="user-name" type="text" name="name" class="form-control"
-						placeholder="이름">
-				</div>
+			<div class="form-group has-feddback">
+				<input id="user-name" type="text" name="name" class="form-control"
+					placeholder="이름">
+			</div>
 
-				<div class="form-group has-feddback">
-					<input id="pw1" type="password" name="pw" class="form-control"
-						placeholder="비밀번호">
-				</div>
-				<span class="form-confirm" id="pw-confirm"></span>
+			<div class="form-group has-feddback">
+				<input id="pw1" type="password" name="pw" class="form-control"
+					placeholder="비밀번호">
+			</div>
+			<span class="form-confirm" id="pw-confirm"></span>
 
-				<div class="form-group has-feddback">
-					<input id="pw2" type="password" name="pwcheck" class="form-control"
-						placeholder="비밀번호 확인">
-				</div>
-				<span class="form-confirm" id="pwcheck-confirm"></span> <button
-					id="submit-join" class="form-group has-feddback">가입하기</button>
+			<div class="form-group has-feddback">
+				<input id="pw2" type="password" name="pwcheck" class="form-control"
+					placeholder="비밀번호 확인">
+			</div>
+			<span class="form-confirm" id="pwcheck-confirm"></span>
+			<button id="submit-join" class="form-group has-feddback">가입하기</button>
 		</div>
 
 
